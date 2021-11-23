@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+    
+    <span>Cart</span>
+    <span class="example-spacer"></span>
+
+    <div style="text-align: right; width: 95%;">
+
+      <button 
+        (click)="goTo('cart')"
+        matBadge="{{matBadge}}" 
+        matBadgePosition="after"
+        matBadgeColor="accent"
+        mat-icon-button class="button fancy-button" 
+        aria-label="Example icon-button with share icon">
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+    </div>
+</mat-toolbar>
+<!-- <a routerLink="{{link}}" *ngFor="let link of links"> <b>{{ link }}</b><br> </a> -->
+
+<button mat-button [matMenuTriggerFor]="menu" color="primary">Menu</button>
+<mat-menu #menu="matMenu">
+  <button (click)="goTo(link)" mat-menu-item *ngFor="let link of links">{{ link }}</button>
+</mat-menu>
